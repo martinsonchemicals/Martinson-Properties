@@ -4,7 +4,7 @@
   // (e.g. to "martinsonproperties") before your first deploy — Cloudflare
   // uses this as part of the default *.workers.dev URL and as the name
   // shown in your dashboard.
-  "name": "martinson-vacation-rentals",
+  "name": "martinson-properties",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-08-01",
   "compatibility_flags": [
@@ -20,7 +20,7 @@
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "martinson-vacation-rentals"
+      "service": "martinson-properties"
     }
   ],
 
