@@ -1,0 +1,46 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // The Worker's name in your Cloudflare account. Feel free to rename this
+  // (e.g. to "martinsonproperties") before your first deploy — Cloudflare
+  // uses this as part of the default *.workers.dev URL and as the name
+  // shown in your dashboard.
+  "name": "martinson-vacation-rentals",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-08-01",
+  "compatibility_flags": [
+    // Lets the app use Node.js APIs (like node:crypto, used for admin
+    // login sessions) on Cloudflare's Workers runtime.
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "martinson-vacation-rentals"
+    }
+  ],
+
+  // --- Database: properties + guest inquiries ---
+  // Created with `npx wrangler d1 create martinson-vacation-rentals-db`.
+  // Replace database_id below with the id that command prints out.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "martinson-vacation-rentals-db",
+      "database_id": "efb6aacf-ae80-4447-bab5-3f8a260e987e"
+    }
+  ],
+
+  // --- Storage: uploaded property photos ---
+  // Created with `npx wrangler r2 bucket create martinson-vacation-rentals-photos`.
+  "r2_buckets": [
+    {
+      "binding": "PHOTOS",
+      "bucket_name": "martinson-vacation-rentals-photos"
+    }
+  ]
+}

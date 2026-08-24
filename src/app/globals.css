@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  --font-serif: Georgia, "Iowan Old Style", "Palatino Linotype", ui-serif, serif;
+
+  /* Martinson Vacation Rentals brand palette */
+  --color-ink-50: #f3f6f5;
+  --color-ink-100: #dde7e4;
+  --color-ink-200: #b7cac4;
+  --color-ink-300: #8ba9a1;
+  --color-ink-400: #5e857c;
+  --color-ink-500: #3f6660;
+  --color-ink-600: #2c4d48;
+  --color-ink-700: #223d3a;
+  --color-ink-800: #16302e;
+  --color-ink-900: #0f2321;
+  --color-ink-950: #081615;
+
+  --color-sand-50: #fdfbf7;
+  --color-sand-100: #faf6ee;
+  --color-sand-200: #f4ecdb;
+  --color-sand-300: #ecdec0;
+  --color-sand-400: #dfc79a;
+
+  --color-clay-400: #d99b6c;
+  --color-clay-500: #c17f4c;
+  --color-clay-600: #a4653a;
+  --color-clay-700: #85502f;
+}
+
+@layer base {
+  body {
+    @apply bg-sand-50 text-ink-900 antialiased;
+  }
+}
