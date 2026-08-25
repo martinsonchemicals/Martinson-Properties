@@ -83,8 +83,12 @@ export default async function PropertyDetailPage({ params }: { params: Params })
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-6xl gap-12 px-6 py-14 lg:grid-cols-3">
-          <div className="lg:col-span-2">
+        {/* The right-hand column has a fixed 420px track (rather than an
+            equal 1/3 share) so the Hospitable booking widget — which sizes
+            itself to 100% of its container — gets enough width to lay out
+            its calendar without needing its own internal scrollbars. */}
+        <section className="mx-auto grid max-w-6xl gap-12 px-6 py-14 lg:grid-cols-[1fr_420px]">
+          <div>
             <h2 className="font-serif text-2xl font-medium text-ink-900">
               About this property
             </h2>

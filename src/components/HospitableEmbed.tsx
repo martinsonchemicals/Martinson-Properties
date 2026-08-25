@@ -46,5 +46,9 @@ export default function HospitableEmbed({ code }: { code: string }) {
     );
   }
 
-  return <div ref={containerRef} className="hospitable-embed min-h-[420px]" />;
+  // No fixed min-height here: a real Hospitable widget (iframe/script) sets
+  // its own height once it loads, and a simple fallback link (see the admin
+  // panel's Hospitable field) is only a couple lines tall. Forcing a fixed
+  // minimum here left a tall empty box under short content like a link.
+  return <div ref={containerRef} className="hospitable-embed" />;
 }
