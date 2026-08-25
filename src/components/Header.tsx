@@ -6,7 +6,14 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-export default function Header() {
+export default function Header({
+  bookHref = "/properties",
+}: {
+  // On a property detail page, pass "#book-direct" so this button jumps
+  // straight to that property's own booking widget instead of sending
+  // someone who is already looking at a property back to the full listing.
+  bookHref?: string;
+}) {
   return (
     <header className="sticky top-0 z-40 border-b border-ink-100 bg-sand-50/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
@@ -32,7 +39,7 @@ export default function Header() {
         </nav>
 
         <Link
-          href="/properties"
+          href={bookHref}
           className="rounded-full bg-ink-800 px-5 py-2 text-sm font-medium text-sand-50 transition-colors hover:bg-ink-700"
         >
           Book direct

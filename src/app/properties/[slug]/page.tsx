@@ -35,7 +35,7 @@ export default async function PropertyDetailPage({ params }: { params: Params })
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      <Header bookHref="#book-direct" />
 
       <main className="flex-1">
         <section className="mx-auto max-w-6xl px-6 pt-10">
@@ -116,7 +116,7 @@ export default async function PropertyDetailPage({ params }: { params: Params })
             )}
           </div>
 
-          <div>
+          <div id="book-direct" className="scroll-mt-24">
             <div className="sticky top-24 rounded-2xl border border-ink-100 bg-white p-5 shadow-sm">
               <h2 className="font-serif text-xl font-medium text-ink-900">
                 Book direct
